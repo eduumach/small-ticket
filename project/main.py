@@ -12,4 +12,9 @@ def index():
 
 @main.route('/profile')
 def profile():
-    return render_template('profile.html', name=current_user.name)
+    return render_template('user/profile.html', name=current_user.name)
+
+
+@main.route('/admin')
+def admin():
+    return render_template('admin/index.html')
