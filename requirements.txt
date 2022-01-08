@@ -1,3 +1,4 @@
 flask
 dynaconf
 python-dotenv
+flask_sqlalchemy
