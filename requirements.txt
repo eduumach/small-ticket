@@ -2,3 +2,8 @@ flask
 dynaconf
 python-dotenv
 flask_sqlalchemy
+sqlalchemy_serializer
+werkzeug
+flask_marshmallow
+marshmallow-sqlalchemy
+PyJWT

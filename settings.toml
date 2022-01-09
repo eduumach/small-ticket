@@ -1,14 +1,17 @@
 [default]
 DEBUG = false
 SQLALCHEMY_DATABASE_URI = 'sqlite:///db.sqlite'
-SECRET_KEY = "manguinha"
+SECRET_KEY = "jadkfbsdkjbfbh"
 PASSWORD_SCHEMES = ['pbkdf2_sha512', 'md5_crypt']
 EXTENSIONS = [
-
+    "project.ext.database:init_app",
+    "project.ext.commands:init_app",
+    "project.restapi.user:init_app",
 ]
 
 [development]
 DEBUG = true
+SQLALCHEMY_TRACK_MODIFICATIONS = false
 
 [testing]
 SQLALCHEMY_DATABASE_URI = 'sqlite:///testing.db'
