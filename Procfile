@@ -1,2 +1,2 @@
-web: flask create-db
+flask create-db
 web: flask run
