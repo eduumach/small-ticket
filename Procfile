@@ -1,2 +1,2 @@
-release:  python migration.py
-web: gunicorn project:create_app
+web: flask create-db
+web: flask fun
