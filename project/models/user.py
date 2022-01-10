@@ -9,6 +9,7 @@ class User(db.Model, SerializerMixin):
     name = db.Column(db.String(60), nullable=False)
     email = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(512), nullable=False)
+    role = db.Column(db.String(50), default='user')
     created_on = db.Column(db.DateTime, default=datetime.datetime.now())
 
     def __init__(self, name, email, password):
@@ -19,7 +20,7 @@ class User(db.Model, SerializerMixin):
 
 class UserSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'name', 'email', 'password', 'created_on')
+        fields = ('id', 'name', 'email', 'password',    'role', 'created_on')
 
 
 user_schema = UserSchema()
