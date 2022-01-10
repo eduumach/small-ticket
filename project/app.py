@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from project.ext import configuration
+from project.restapi.user.auth import token_required
 
 
 def create_app():
@@ -8,7 +9,8 @@ def create_app():
     configuration.load_extensions(app)
 
     @app.route('/')
-    def hello():
-        return jsonify({'message': 'ola mundão!'})
+    @token_required
+    def hello(current_user):
+        return jsonify({'message': 'ola ' + current_user.name + '!'})
 
     return app
