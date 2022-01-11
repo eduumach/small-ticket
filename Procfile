@@ -1,2 +1,1 @@
-flask create-db
-web: flask run
+web: gunicorn 'project.app:create_app()'

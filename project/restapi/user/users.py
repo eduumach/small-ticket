@@ -3,7 +3,7 @@ from flask import request, jsonify, Blueprint
 from project.ext.database import db
 from project.models.user import User, user_schema, users_schema
 
-users = Blueprint('user', __name__, url_prefix='/users')
+users = Blueprint('users', __name__, url_prefix='/v1/users')
 
 
 @users.route('/', methods=['POST'])
