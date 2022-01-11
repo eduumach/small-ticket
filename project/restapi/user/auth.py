@@ -1,5 +1,5 @@
 import datetime
-
+import os
 import jwt
 from flask import Blueprint, request, jsonify, current_app
 from werkzeug.security import check_password_hash
@@ -21,7 +21,7 @@ def auth_post():
 
     if user and check_password_hash(user.password, auth.password):
         token = jwt.encode({'username': user.email, 'exp': datetime.datetime.now() + datetime.timedelta(hours=12)},
-                           current_app.config['SECRET_KEY'])
+                           os.environ['SECRET_KEY'])
         return jsonify({'message': 'Validated successfully', 'token': token,
                         'exp': datetime.datetime.now() + datetime.timedelta(hours=12)})
 
@@ -36,7 +36,7 @@ def token_required(f):
             return jsonify({'message': 'token is missing', 'data': {}}), 401
         try:
             print('aeee')
-            data = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=["HS256"])
+            data = jwt.decode(token, os.environ['SECRET_KEY'], algorithms=["HS256"])
             print(data)
             current_user = user_by_email(email=data['username'])
             print(current_user)
