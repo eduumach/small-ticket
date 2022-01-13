@@ -1,3 +1,6 @@
+<div align=center>
+<img height="180em" src="https://files.catbox.moe/zmeuoq.png">
+</div>
 
 # Small Ticket
 
