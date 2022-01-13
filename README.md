@@ -1,11 +1,12 @@
 
 # Small Ticket
 
+With this project, I intend to make a ticket sales website, where the cinema can register and sell their tickets and 
+then the user can go and buy the tickets.
 
 ## Link project in heroku
 
 https://small-ticket.herokuapp.com
-
 
 ## API
 
@@ -17,11 +18,11 @@ https://small-ticket.herokuapp.com
 POST /v1/users
 ```
 
-| Parameter  | Type     | Description               |
-|:-----------|:---------|:--------------------------|
-| `name`     | `string` | **Obrigatório**. cpf.     |
-| `email`    | `string` | **Obrigatório**. nome.    |
-| `password` | `string` | **Obrigatorio**. password |
+| Parameter  | Type     | Description            |
+|:-----------|:---------|:-----------------------|
+| `name`     | `string` | **Required**. cpf.     |
+| `email`    | `string` | **Required**. name.    |
+| `password` | `string` | **Required**. password |
 
 #### Update User
 
@@ -29,45 +30,45 @@ POST /v1/users
 PUT /v1/users/<id>
 ```
 
-| Parameter  | Type     | Description               |
-|:-----------|:---------|:--------------------------|
-| `name`     | `string` | **Obrigatório**. cpf.     |
-| `email`    | `string` | **Obrigatório**. nome.    |
-| `password` | `string` | **Obrigatorio**. password |
+| Parameter  | Type     | Description            |
+|:-----------|:---------|:-----------------------|
+| `name`     | `string` | **Required**. cpf.     |
+| `email`    | `string` | **Required**. name.    |
+| `password` | `string` | **Required**. password |
 
 #### Get Users
 
 ```http
 GET /v1/users
 ```
-Mostra todos os usuarios
+Get all users
 
 #### Get User
 
 ```http
 GET /v1/users/<id>
 ```
-Mostra um usuario espesifico pelo id
+Get user whit id
+
+### Auth User
 
 #### Post Auth User
 
 ```http
 POST /v1/users/auth
 ```
-Basic Authentic
+Authorization - Basic Auth
 
-| Parameter  | Type     | Description               |
-|:-----------|:---------|:--------------------------|
-| `user`     | `string` | **Obrigatório**. username |
-| `password` | `string` | **Obrigatorio**. password |
+| Parameter  | Type     | Description            |
+|:-----------|:---------|:-----------------------|
+| `user`     | `string` | **Required**. username |
+| `password` | `string` | **Required**. password |
 
-#### Operação deposito
+Return the token
+
+#### Get hello
 
 ```http
-POST /operacao/deposito
+POST /?token=
 ```
-
-| Parameter | Type     | Description                         |
-|:----------|:---------|:------------------------------------|
-| `conta`   | `Long`   | **Obrigatório**. Id da conta.       |
-| `valor`   | `double` | **Obrigatório**. Valor do deposito. |
+add your token, and he will say "hello {your username}"
