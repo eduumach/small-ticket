@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 from project.ext import configuration
-from project.restapi.user.auth import token_required
+from project.restapi.cinema.auth import token_required
 
 
 def create_app():

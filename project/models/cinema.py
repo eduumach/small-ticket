@@ -13,9 +13,8 @@ class Cinema(db.Model, SerializerMixin):
     role = db.Column(db.String(50), default='cinema')
     created_on = db.Column(db.DateTime, default=datetime.datetime.now())
 
-
-    def __init__(self, name_cinema, email, cnpj, password):
-        self.name_cinema = name_cinema
+    def __init__(self, name, email, cnpj, password):
+        self.name = name
         self.email = email
         self.cnpj = cnpj
         self.password = password
